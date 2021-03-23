@@ -1,9 +1,12 @@
 package ru.netology.unit;
 
+/**
+ * @version 0.1
+ */
 public class CashbackHackService {
-    private final int boundary = 1000;
+    final static int BOUNDARY = 1000;   // defines cashback _threshold_
 
-    public int remain(int amount) {
-        return boundary - amount % boundary;
+    public int calculateRemainder(int amount) {
+        return BOUNDARY - amount % BOUNDARY;
     }
 }
