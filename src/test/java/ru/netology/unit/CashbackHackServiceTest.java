@@ -6,7 +6,7 @@ import static ru.netology.unit.CashbackHackService.BOUNDARY;
 import org.junit.Test;
 
 /**
- * @version JUnit4
+ * @version JUnit4-Jupiter
  */
 public class CashbackHackServiceTest {
     private final CashbackHackService service = new CashbackHackService();
