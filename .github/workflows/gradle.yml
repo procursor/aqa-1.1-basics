@@ -20,3 +20,19 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Publish Test Report
+      uses: mikepenz/action-junit-report@v2
+      with:
+        report_paths: '**/build/test-results/test/TEST-*.xml'
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Archive build test results
+      uses: actions/upload-artifact@v2
+      if: failure()
+      with:
+        name: gradle-report
+        path: /home/runner/work/aqa-1.1-basics/aqa-1.1-basics/build/reports/tests/test/*
+        if-no-files-found: error
+    - name: Download gradle-report
+      uses: actions/download-artifact@v2
+      with:
+        name: gradle-report
