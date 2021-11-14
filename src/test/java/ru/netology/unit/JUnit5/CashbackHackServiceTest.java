@@ -1,7 +1,6 @@
 package ru.netology.unit.JUnit5;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static ru.netology.unit.CashbackHackService.BOUNDARY;
 
 import java.util.logging.Logger;
 import org.junit.jupiter.api.BeforeAll;
@@ -32,17 +31,17 @@ public class CashbackHackServiceTest {
 
     @Test
     public void shouldReturn100() {
-        assertEquals(100, service.calculateRemainder(BOUNDARY - 100));
+        assertEquals(100, service.calculateRemainder(CashbackHackService.BOUNDARY - 100));
     }
 
     @Test
     public void shouldReturnZero() {
-        assertEquals(0, service.calculateRemainder(BOUNDARY));
+        assertEquals(0, service.calculateRemainder(CashbackHackService.BOUNDARY));
     }
 
     @Test
     public void shouldReturn900() {
-        assertEquals(900, service.calculateRemainder(BOUNDARY + 100));
+        assertEquals(900, service.calculateRemainder(CashbackHackService.BOUNDARY + 100));
     }
 }
 
